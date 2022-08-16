@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/dm_sans_medium"
+        android:text="TITLU"
+        android:textColor="@color/accent_blue"
+        app:layout_constraintStart_toEndOf="@+id/ivImage"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+
+        android:id="@+id/tvContent"
+        android:layout_width="207dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="32dp"
+        android:text="Praesent auctor, elit nec maximus lobortis, arcu leo pharetra risus, quis efficitur erat augue quis felis. Integer vitae luctus diam, non pulvinar massa. Etiam scelerisque lectus nulla, sed condimentum lacus cursus eu. Ut aliquam, libero non lacinia bibendum, purus risus condimentum dolor, nec consectetur turpis leo et ipsum. Aliquam a mi augue. Aliquam sed rhoncus lectus. Maecenas suscipit leo in justo tincidunt convallis. Aliquam erat volutpat. Nullam accumsan turpis sit amet sem tincidunt varius. In ut metus eu purus dapibus venenatis. Quisque maximus massa in imperdiet ultricies. Fusce ac pulvinar elit, sagittis finibus ma"
+        android:textColor="@color/hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/ivImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="154dp"
+        android:layout_height="178dp"
+        android:src="@color/accent_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
