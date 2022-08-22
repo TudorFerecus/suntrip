@@ -1,13 +1,17 @@
 package com.smartherd.suntrip;
 
+import java.util.Stack;
+
 public class RouteItem {
     private String title;
     private String content;
+    private String cdnPhoto;
 
-    public RouteItem(String title_, String content_)
+    public RouteItem(String title_, String content_, String cdnPhoto_)
     {
         title = title_;
         content = content_;
+        cdnPhoto = cdnPhoto_;
     }
 
     public String getTitle()
@@ -19,6 +23,12 @@ public class RouteItem {
     {
         return content;
     }
+
+    public String getImageCdn()
+    {
+        return cdnPhoto;
+    }
+
 
     public void setTitle(String title_)
     {

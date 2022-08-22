@@ -8,7 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#F3ECD6</color>
+    <color name="deep_krem">#CAB05D</color>
     <color name="hint"> #797979</color>
     <color name="accent_blue"> #021F3D</color>
     <color name="gray"> #D9D8D8</color>
+    <color name="bleu">#57849F</color>
+
 </resources>

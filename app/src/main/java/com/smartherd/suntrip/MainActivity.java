@@ -1,20 +1,34 @@
 package com.smartherd.suntrip;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static android.view.Gravity.*;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.core.view.GravityCompat;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
 import com.smartherd.suntrip.databinding.ActivityMainBinding;
 
-public class MainActivity extends UtilitiesClass {
+public class MainActivity extends UtilitiesClass{
 
     private ActivityMainBinding binding;
+    private ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +36,30 @@ public class MainActivity extends UtilitiesClass {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        navBarSetUp(binding.toolbar, binding.drawerLayout);
+
+        navSetUp(binding.nv, new NavigationViewInterface() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public void OnItemSelected(MenuItem menuItem) {
+
+                switch (menuItem.getItemId())
+                {
+                    case R.id.itHome:
+                        break;
+
+                    case R.id.itRoutePicker:
+                        switchActivity(RoutePicker.class);
+                        break;
+
+                    case R.id.itProfile:
+                        switchActivity(Profile.class);
+                        break;
+
+
+                }
+            }
+        });
 
         if(Hash.getInstance().get_token().equals(""))
         {
@@ -75,9 +113,9 @@ public class MainActivity extends UtilitiesClass {
         });
 
 
-
-
     }
+
+
 
     private String get_login_url(String password, String email)
     {
@@ -86,5 +124,6 @@ public class MainActivity extends UtilitiesClass {
         return base_url_login + "&password=" + password +
                 "&email=" + email;
     }
+
 
 }

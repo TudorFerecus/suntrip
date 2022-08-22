@@ -3,43 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/gray"
-    android:layout_margin="10dp">
+    android:layout_height="220dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/background"
+
+    >
+
+    <ImageView
+        android:id="@+id/ivLittleBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_route_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"/>
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:fontFamily="@font/dm_sans_medium"
-        android:text="TITLU"
-        android:textColor="@color/accent_blue"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:fontFamily="@font/crete_round_regular"
+        android:text="Ruta Mountain"
+        android:textColor="@color/background"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/cv"
+        app:layout_constraintTop_toTopOf="@+id/ivLittleBg" />
 
     <TextView
 
         android:id="@+id/tvContent"
-        android:layout_width="207dp"
-        android:layout_height="142dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="265dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/roboto_regualr"
         android:text="Praesent auctor, elit nec maximus lobortis, arcu leo pharetra risus, quis efficitur erat augue quis felis. Integer vitae luctus diam, non pulvinar massa. Etiam scelerisque lectus nulla, sed condimentum lacus cursus eu. Ut aliquam, libero non lacinia bibendum, purus risus condimentum dolor, nec consectetur turpis leo et ipsum. Aliquam a mi augue. Aliquam sed rhoncus lectus. Maecenas suscipit leo in justo tincidunt convallis. Aliquam erat volutpat. Nullam accumsan turpis sit amet sem tincidunt varius. In ut metus eu purus dapibus venenatis. Quisque maximus massa in imperdiet ultricies. Fusce ac pulvinar elit, sagittis finibus ma"
-        android:textColor="@color/hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/accent_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/ivLittleBg"
+        app:layout_constraintEnd_toEndOf="@+id/ivLittleBg"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toEndOf="@+id/cv"
+        app:layout_constraintTop_toTopOf="@+id/ivLittleBg" />
 
-    <ImageView
-        android:id="@+id/ivImage"
-        android:layout_width="154dp"
-        android:layout_height="178dp"
-        android:src="@color/accent_blue"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="103dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/none"
+        app:cardCornerRadius="10dp"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/accent_blue" />
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

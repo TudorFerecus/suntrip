@@ -7,6 +7,24 @@
     tools:context=".RouteList"
     android:background="@color/background">
 
+    <ImageView
+        android:id="@+id/ivZone"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#7599B3"/>
+
+    <TextView
+        android:id="@+id/tvZone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transilvania"
+        android:textColor="#293F57"
+        android:textSize="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvRoutes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivZone"
+        app:layout_constraintTop_toTopOf="@+id/ivZone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRoutes"
         android:layout_width="412dp"

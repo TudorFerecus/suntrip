@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/itHome"
+                android:icon="@drawable/ic_baseline_pin_drop_24"
+                android:title="Home"
+                />
+            <item
+                android:id="@+id/itRoutePicker"
+                android:icon="@drawable/ic_baseline_map_24"
+                android:title="Routes"
+                />
+    </group>
+    <item
+    android:id="@+id/Disc"
+    android:title="Profile">
+        <menu>
+
+            <item
+                android:id="@+id/itProfile"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Profile"/>
+            <item
+                android:id="@+id/itLogOut"
+                android:icon="@drawable/ic_baseline_login_24"
+                android:title="Logout"
+                />
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/itmCommunicate"
+        android:title="Communicate">
+        <menu>
+            <item
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share" />
+
+            <item
+                android:icon="@drawable/ic_baseline_star_rate_24"
+                android:title="Rate Us" />
+
+        </menu>
+    </item>
+
+</menu>
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    tools:context=".activities.MenuAdsAppCompatActivity">-->
+
+<!--    <item android:id="@+id/action_notification1"-->
+<!--        android:icon="@drawable/pin_drop"-->
+<!--        android:showAsAction-->
+<!--        android:title="action_notification">-->
+<!--        <menu>-->
+<!--            <item android:id="@+id/action_share_us"-->
+<!--                android:icon="@drawable/ic_share"-->
+<!--                android:title="@string/share_us" />-->
+<!--            <item android:id="@+id/action_rate_us"-->
+<!--                android:icon="@android:drawable/ic_menu_info_details"-->
+<!--                android:title="@string/rate" />-->
+<!--            <item android:id="@+id/action_about"-->
+<!--                android:checked="false"-->
+<!--                android:icon="@drawable/ic_about"-->
+<!--                android:title="@string/about" />-->
+<!--        </menu>-->
+<!--    </item>-->
+
+<!--</menu>-->

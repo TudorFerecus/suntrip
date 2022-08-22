@@ -2,9 +2,11 @@ package com.smartherd.suntrip;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,7 +22,28 @@ public class Profile extends UtilitiesClass {
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        navBarSetUp(binding.toolbar, binding.drawerLayout);
+        navSetUp(binding.nv, new NavigationViewInterface() {
 
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public void OnItemSelected(MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.itHome:
+                        switchActivity(MainActivity.class);
+                        break;
+
+                    case R.id.itRoutePicker:
+                        switchActivity(RoutePicker.class);
+                        finish();
+                        break;
+
+                    case R.id.itProfile:
+                        break;
+                }
+            }
+        });
 
         get_request(base_url_profile + "token=" + Hash.getInstance().get_token(), new VolleyCallback() {
             @Override
@@ -46,16 +69,6 @@ public class Profile extends UtilitiesClass {
                 logOut();
             }
         });
-
-        binding.btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchActivity(MainActivity.class);
-                finish();
-            }
-        });
-
-
     }
 
     private void logOut() {

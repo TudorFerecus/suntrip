@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,6 +26,32 @@ public class RoutePicker extends UtilitiesClass {
         super.onCreate(savedInstanceState);
         binding = ActivityRoutePickerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        navBarSetUp(binding.toolbar, binding.drawerLayout);
+        navSetUp(binding.nv, new NavigationViewInterface() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public void OnItemSelected(MenuItem menuItem) {
+
+                switch (menuItem.getItemId())
+                {
+                    case R.id.itHome:
+                        switchActivity(MainActivity.class);
+                        finish();
+                        break;
+
+                    case R.id.itRoutePicker:
+                        break;
+
+                    case R.id.itProfile:
+                        switchActivity(Profile.class);
+                        finish();
+                        break;
+
+
+                }
+            }
+        });
 
         binding.btnBanat.setOnClickListener(new View.OnClickListener() {
             @Override
