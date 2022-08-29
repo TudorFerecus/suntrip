@@ -1,5 +1,7 @@
 package com.smartherd.suntrip;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -42,6 +45,8 @@ public class recycleRouteAdapter extends RecyclerView.Adapter<recycleRouteAdapte
         private TextView contentTxt;
         private ImageView imageView;
         private View view;
+        private AppCompatButton button;
+        private Context context;
 
 
         public MyViewHolder(final View view_)
@@ -51,6 +56,8 @@ public class recycleRouteAdapter extends RecyclerView.Adapter<recycleRouteAdapte
             titleTxt = view.findViewById(R.id.tvTitle);
             contentTxt = view.findViewById(R.id.tvContent);
             imageView = view.findViewById(R.id.ivImage);
+            button = view.findViewById(R.id.button);
+            context = view.getContext();
         }
 
     }
@@ -70,9 +77,17 @@ public class recycleRouteAdapter extends RecyclerView.Adapter<recycleRouteAdapte
         String content = itemList.get(position).getContent();
         holder.titleTxt.setText(title);
         holder.contentTxt.setText(content);
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.context, MapsActivity.class);
+                holder.context.startActivity(intent);
+            }
+        });
         Glide.with(holder.view)
                 .load(itemList.get(position).getImageCdn())
                 .into(holder.imageView);
+
 
     }
 

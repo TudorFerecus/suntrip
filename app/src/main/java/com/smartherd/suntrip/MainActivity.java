@@ -112,6 +112,7 @@ public class MainActivity extends UtilitiesClass{
             }
         });
 
+        switchActivity(MapsActivity.class);
 
     }
 
